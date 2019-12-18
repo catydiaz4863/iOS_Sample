@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 extension UIViewController{
 
@@ -24,4 +25,9 @@ func navPush(Storyboard: String, Identifier: String)
     }
     
 }
+
+
+var list_animals: [database] = []
+
+
 
