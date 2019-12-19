@@ -8,26 +8,29 @@
 
 import UIKit
 import Firebase
+
 class ViewController: UIViewController {
 
     let db = Firestore.firestore()
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        db.collection("sample").getDocuments() { (querySnapshot, err) in
+        db.collection("cats").getDocuments() { (querySnapshot, err) in
                          if let err = err {
                              print("Error getting documents: \(err)")
                          } else {
                              for document in querySnapshot!.documents {
                                 print("\(document.documentID) => \(document.data())")
-                                 list_animals.append(database(dictionary: document.data()))
+                               list_animals.append(animals(dictionary: document.data()))
                              }
                          }
                      }
     }
-    
+
     
     @IBAction func button1click(_ sender: Any) {
         

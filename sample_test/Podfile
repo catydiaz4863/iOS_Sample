@@ -7,4 +7,6 @@ target 'sample_test' do
 
   # Pods for sample_test
   pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
+  pod 'FirebaseUI/Storage'
 end

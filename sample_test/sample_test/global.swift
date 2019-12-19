@@ -27,7 +27,8 @@ func navPush(Storyboard: String, Identifier: String)
 }
 
 
-var list_animals: [database] = []
 
 
+
+var list_animals: [animals] = []
 

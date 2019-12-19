@@ -8,6 +8,9 @@
 
 import UIKit
 import Firebase
+import FirebaseUI
+import FirebaseStorage
+
 
 class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
@@ -38,7 +41,16 @@ class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = table.dequeueReusableCell(withIdentifier: "cell1", for: indexPath) as! tablecell
         
         
-        cell.label.text = list_animals[indexPath.row].animal
+        let storageRef = Storage.storage().reference()
+        // Do any additional setup after loading the view.
+        
+        let reference = storageRef.child(list_animals[indexPath.row].image)
+        print(reference)
+        let placeholder = UIImage(named: "wallpaper")
+        cell.animal_images.sd_setImage(with: reference, placeholderImage: placeholder)
+        
+        
+        cell.label.text = list_animals[indexPath.row].name
         return cell
     }
     
